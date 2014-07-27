@@ -2,14 +2,15 @@
 
 # makeCacheMatrix() creates a list of functions that
 # store two matrices in a shared environment. 
-# One matrix is an input matrix and the other is 
-# matrix is computed.The computed maatrix is the inverse of the input matrix. 
+# One matrix is an input matrix and the other 
+# matrix is computed.The computed matrix is the inverse of the input matrix. 
 # Once computed the inverse matrix is stored (cached) in an environment shared
 # by the functions in the list that makeCacheMatrix() returns.
-# The list returned consists o functions to get and set the value of
+# The list returned consists of functions to get and set the value of
 # the input matrix and functioins to get and set the value of
 # the inverse. If an inverse has not been computed then the function that gets
-# the inverse retruns NULL.Otherwise it returns the previously computed inverse.
+# the inverse retruns NULL. Otherwise it returns the previously computed inverse.
+#
 makeCacheMatrix <- function(inputMatrix = matrix()) {
   #Set the initial value of the cached inverse to NULL
   cachedInverse <- NULL
@@ -51,7 +52,7 @@ makeCacheMatrix <- function(inputMatrix = matrix()) {
 
 # cacheSolve() takes as input the result of invoking makeCacheSolve() on a square 
 # matrix. It first attempts to get the inverse using the getInverse() function in
-# the list of functions returend by makeCacheMatric(). If it fails to get a value,
+# the list of functions returend by makeCacheMatrix(). If it fails to get a value,
 # i.e the return value of getInverse() is NULL then it uses getMatrix() to retrieve
 # the input matrix, inverts it, and cahces the result using the setInverse() function
 # in the list returned by makeCacheMatrix(). If cacheSolve() is called again
